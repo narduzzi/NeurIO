@@ -1,0 +1,391 @@
+
+
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('/static/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family:  Arial, Helvetica, sans-serif;
+}
+
+.grotext {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 30px;
+
+}
+
+.NeurIO {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-bottom: 1px;
+}
+
+.linksbündigerText {
+    font-size: 13px;
+    font-weight: normal;
+    text-align: left;
+}
+
+.linksbündigerText {
+    width: 300px;
+    height: 150px;
+}
+
+.Untertitel {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+
+}
+
+/* CSS style for the row */
+.image-row {
+    display: flex; /* Use flexbox to create a horizontal row */
+}
+
+/* CSS style for image containers */
+.image-wrapper {
+    text-align: center; /* Center-align the image */
+}
+
+/* CSS style for images */
+.image-wrapper img {
+    max-width: 22px; /* Maximum width of the images (adjust as needed) */
+    height: 22px; /* Adjusts the height proportionally to the width */
+}
+
+
+.caption-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-right: 20px
+}
+
+
+.caption {
+    margin-bottom: 80px;
+    font-size: 10px;
+}
+
+.zweitertext {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    z-index: 2;
+    left: 50px;
+    top: 250px;
+    font-weight: bolder
+}
+.ellipse-divider {
+    background-color: #f3c200;
+    height: 250px;
+    width: 3000px;
+    clip-path: ellipse(100% 90% at 20% 100%);
+    position: absolute;
+    z-index: 1;
+}
+.kleinergelb {
+    width: 300px;
+    height: 50px;
+    font-size: 10px;
+    position:relative;
+    z-index: 3;
+    top: 315px;
+    left: 800px;
+}
+.email {
+    width: 200px;
+    height: 17px;
+   background-color: #f3c200;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 6px;
+    left: 150px;
+    bottom: 100px;
+}
+.emailklein {
+    width: 200px;
+    height: 17px;
+    font-size: 8px;
+    position: relative;
+    bottom: 120px;
+    right: 50px;
+}
+.unteremail {
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    position: relative;
+    right: 250px;
+    bottom: 80px;
+}
+.staytuned {
+   width: 80px;
+    height: 20px;
+   background-color: black;
+    position: relative;
+    border-radius: 6px;
+    font-size: 10px;
+    color: white;
+    right: 251px;
+    bottom: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.oberezeile {
+     width: 200px;
+    height: 20px;
+    font-size: 8px;
+    position: relative;
+    left: 1400px;
+}
+.NeurIooffer {
+   width: 300px;
+    height: 150px;
+    position: relative;
+    font-size: 30px;
+    top: 400px;
+    font-family: 'Space Grotesk';
+}
+.NeurIOtextoffer {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    font-size: 15px;
+z-index: 4;
+    top: 300px;
+}
+
+.platzhalter {
+      width: 200px;
+    height: 200px;
+
+}
+.benchmarkingtools {
+  width: 200px;
+    height: 200px;
+font-size: 20px;
+    font-family: 'Space Grotesk';
+font-weight: bold;
+    position: relative;
+    bottom: 30px;
+}
+.underscore {
+      width: 200px;
+    height: 200px;
+font-size: 13px;
+    position: relative;
+    bottom: 170px;
+       font-family:  Arial, Helvetica, sans-serif;
+}
+.platzhalter2 {
+      width: 200px;
+    height: 200px;
+    position: relative;
+    left: 500px;
+    bottom: 634px;
+}
+.benchmarkingtools2 {
+  width: 200px;
+    height: 200px;
+font-size: 20px;
+    font-family: 'Space Grotesk';
+font-weight: bold;
+    position: relative;
+   bottom: 665px;
+    left: 500px;
+}
+.opensource {
+        width: 200px;
+    height: 200px;
+font-size: 13px;
+    position: relative;
+    bottom: 805px;
+    left: 500px;
+       font-family:  Arial, Helvetica, sans-serif;
+}
+.community {
+     width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 1265px;
+    left: 1000px;
+}
+.communityheading {
+ width: 200px;
+    height: 200px;
+font-size: 20px;
+    font-family: 'Space Grotesk';
+font-weight: bold;
+    position: relative;
+    left: 1005px;
+    bottom: 1300px;
+}
+.communitytext {
+       width: 200px;
+    height: 200px;
+    position: relative;
+    font-size: 13px;
+    bottom: 1450px;
+    left: 1000px;
+       font-family:  Arial, Helvetica, sans-serif;
+}
+.yellowbox {
+    background-color: #f3c200;
+    width: 2000px;
+    height: 400px;
+    position: relative;
+    bottom: 1400px;
+}
+.contact {
+       width: 200px;
+    height: 200px;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    bottom: 1700px;
+    left: 100px;
+}
+.contactinfo {
+     width: 200px;
+    height: 200px;
+    font-size: 13px;
+    position: relative;
+    bottom: 1850px;
+    left: 100px;
+}
+.quicklinks {
+    width: 200px;
+    height: 200px;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    bottom: 2125px;
+    left: 600px;
+}
+.terms {
+width: 200px;
+    height: 200px;
+    font-size: 13px;
+    position: relative;
+    text-decoration: underline;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    bottom: 1800px;
+}
+.abstand {
+    margin-top: 5px; /* Abstand oben */
+    margin-bottom: 5px; /* Abstand unten */
+    margin-left: 5px; /* Abstand links */
+    margin-right: 15px; /* Abstand rechts */
+    line-height: 1px;
+        text-decoration: underline;
+    position: relative;
+    bottom: 2276px;
+      font-size: 13px;
+    left: 595px;
+
+}
+.follow {
+    width: 200px;
+    height: 200px;
+    font-size: 13px;
+    position: relative;
+    font-weight: bold;
+    bottom: 2365px;
+    left: 1100px;
+}
+.signup {
+  width: 200px;
+    height: 200px;
+    font-size: 13px;
+    position: relative;
+    bottom: 2530px;
+    left: 1100px;
+}
+.subscribebutton {
+      width: 200px;
+    height: 17px;
+    position: relative;
+    border: 2px solid black;
+    border-radius: 6px;
+    bottom: 2650px;
+    left: 1100px;
+ }
+.emailklein2 {
+    width: 200px;
+    height: 17px;
+    font-size: 10px;
+    position: relative;
+    bottom: 2700px;
+    left: 1100px;
+}
+.subscribeklein {
+    width: 54px;
+    height: 20px;
+    font-size: 10px;
+    position: relative;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    bottom: 2706px;
+    left: 1304px;
+    text-align: center;
+    font-weight: bolder;
+}
+.unteremail2 {
+    width: 200px;
+    height: 20px;
+    font-size: 8px;
+    position: relative;
+    bottom: 2709px;
+    left: 1102px;
+    font-size: 10px;
+  }
+.logo {
+    position: relative;
+    bottom: 4800px;
+    left: 1000px;
+}
+/* Zurücksetzen einiger standardmäßiger Stile und Anpassen der Navbar */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navbar {
+    background-color: #333; /* Hintergrundfarbe der Navbar */
+    color: #fff; /* Textfarbe der Navbar */
+}
+
+/* Stil für die Navigationsliste */
+.nav-list {
+    display: flex; /* Navigationsliste horizontal ausrichten */
+    justify-content: space-around; /* Inhalt gleichmäßig aufteilen */
+    align-items: center; /* Inhalt vertikal zentrieren */
+    height: 50px; /* Höhe der Navbar */
+}
+
+/* Stil für die Navigationslinks */
+.nav-list li {
+    padding: 10px;
+}
+
+.nav-list a {
+    text-decoration: none; /* Unterstrich entfernen */
+    color: #fff; /* Textfarbe der Links */
+}
+
+/* Ändern des Link-Stils bei Hover (Mausüber) */
+.nav-list a:hover {
+    text-decoration: underline;
+}
