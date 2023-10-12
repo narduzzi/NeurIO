@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            min-height: 100px;
+        }
+
+        .left-pane {
+            width: 25%;
+            text-align: center;
+        }
+
+        .middle-div {
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .right-pane {
+            width: 25%;
+            text-align: left;
+        }
+
+        .right-pane button {
+            margin-right: 5%;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left-pane,
+            .right-pane {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .right-pane button {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="left-pane">
+            <div class="middle-div">
+                Left Content
+            </div>
+        </div>
+        <div class="right-pane">
+            <a>Home</a>
+            <a>What is it?</a>
+            <a>Contribute</a>
+            <a>Contact</a>
+            <button>Get Involved</button>
+        </div>
+    </header>
+</body>
+</html>

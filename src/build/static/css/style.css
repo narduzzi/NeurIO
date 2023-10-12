@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Space Grotesk';
-    src: url('/static/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+    src: url('/src/staticatic/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

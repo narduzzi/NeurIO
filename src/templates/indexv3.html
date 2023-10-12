@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('/static/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            min-height: 100px;
+        }
+
+        .section {
+            min-height: 400px;
+            max-height: 600px;
+            justify-content: center;
+            align-content: center;
+            display: flex;
+        }
+
+        /* Strip Container */
+        .strip-container {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            max-width: 80%;
+            margin:auto;
+            background-color: blue;
+        }
+
+        .sub-strip-container {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            max-width: 80%;
+            margin:auto;
+            margin-top: 20px;
+            background-color: coral;
+        }
+
+        /* Column Styles */
+        .strip-column-2 {
+            flex: 1;
+            max-width: calc((100% - (2 - 1) * 20px) / 2); /* Distribute columns evenly */
+            background-color: orange;
+        }
+
+        .strip-column-3 {
+            flex: 1;
+            max-width: calc((100% - (3 - 1) * 20px) / 3); /* Distribute columns evenly */
+            background-color: red;
+        }
+
+        .feature-block{
+            display: flex
+        }
+        .feature-block img{
+            max-width: 33%;
+        }
+        .feature-block p{
+            max-width: 66%;
+        }
+
+        /* Last column in the strip (removes margin) */
+        .strip-column:last-child {
+            margin-right: 0;
+        }
+
+        /* Column Content Styling */
+        h2 {
+            font-size: 2rem;
+            margin: 0;
+            color: #333;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0;
+            max-width: 400px;
+        }
+
+        /* Responsive Design (adjust as needed) */
+        @media screen and (max-width: 768px) {
+            .strip-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .strip-column {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="left-pane">
+        <div class="middle-div">
+            Left Content
+        </div>
+    </div>
+    <div class="right-pane">
+        <a>Home</a>
+        <a>What is it?</a>
+        <a>Contribute</a>
+        <a>Contact</a>
+        <button>Get Involved</button>
+    </div>
+</header>
+
+<div class="content">
+    <div class="section" style="background-color: white">
+        <div class="strip-container">
+            <div class="strip-column-2">
+                <h2>Deploy.</h2>
+                <br>
+                <h2>Benchmark. Create.</h2>
+                <p>
+                    NeurIO is an end-to-end open source platform for benchmarking embedded machine learning.
+                    It's a comprehensive and flexible tool for deploying neural networks on embedded devices that lets
+                    engineers and researchers push the state-of-the-art in low power ML, and
+                    build and deploy ML-powered
+                    applications for IoT.
+                </p>
+                <div class="sub-strip-container" style="max-width: 80%; margin-left: 0">
+                    <div class="strip-column-3">
+                        <div class="feature-block">
+                            <img class="feature-block" src="/static/images/neurio_logo.svg"/>
+                            <p>A Desc</p>
+                        </div>
+                    </div>
+                    <div class="strip-column-3">
+                        <div class="feature-block">
+                            <img class="feature-block" src="/static/images/neurio_logo.svg"/>
+                            <p>B Desc</p>
+                        </div>
+                    </div>
+                    <div class="strip-column-3">
+                        <div class="feature-block">
+                            <img class="feature-block" src="/static/images/neurio_logo.svg"/>
+                            <p>C Desc</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="strip-column-2">
+                <img src="/static/images/neurio_logo.svg" style="margin-right: 0; align-content: center">
+            </div>
+        </div>
+    </div>
+    <div class="section" style="background-color: #f3c200">
+        <div class="strip-container">
+            <div class="strip-column-2">
+
+            </div>
+            <div class="strip-column-2">
+
+            </div>
+        </div>
+    </div>
+    <div class="section" style="background-color: white">
+        <div class="strip-container">
+            <div class="strip-column-3">
+
+            </div>
+            <div class="strip-column-3">
+
+            </div>
+            <div class="strip-column-3">
+
+            </div>
+        </div>
+    </div>
+    <div class="section" style="background-color: #f3c200">
+        <div class="strip-container">
+            <div class="strip-column-3">
+
+            </div>
+            <div class="strip-column-3">
+
+            </div>
+            <div class="strip-column-3">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

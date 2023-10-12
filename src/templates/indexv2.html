@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            min-height: 100px;
+        }
+
+        .left-pane {
+            width: 25%;
+            text-align: center;
+            margin-right: 200px;
+        }
+
+        .middle-div {
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .right-pane {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+            margin-right: 200px;
+        }
+
+        .right-pane button {
+            margin: 0; /* Reset margin */
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left-pane,
+            .right-pane {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .right-pane {
+                grid-template-columns: repeat(1, 1fr); /* Stack buttons vertically */
+                gap: 20px; /* Adjust spacing for mobile */
+            }
+        }
+
+        .content {
+            margin: 0 200px; /* 200px margin on each side */
+            padding: 20px; /* Optional padding for inner content */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            width: calc(33% - 20px); /* 50% width for each column with spacing */
+            padding: 10px; /* Optional padding for each column */
+            background-color: #f0f0f0; /* Background color for clarity */
+        }
+
+        .column2 {
+            width: calc(50% - 20px); /* 50% width for each column with spacing */
+            padding: 10px; /* Optional padding for each column */
+            background-color: #f0f0f0; /* Background color for clarity */
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                margin: 0 20px; /* Reduce margin on smaller screens */
+            }
+
+            .container {
+                flex-direction: column; /* Stack columns vertically on smaller screens */
+            }
+
+            .column {
+                width: 100%; /* Full width for columns on smaller screens */
+                margin-bottom: 20px; /* Add margin between columns */
+            }
+
+            .column2 {
+                width: 100%; /* Full width for columns on smaller screens */
+                margin-bottom: 20px; /* Add margin between columns */
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background-color: #ffffff; /* Background color for the section */
+            text-align: center;
+        }
+
+        .ellipse-divider {
+            background-color: #ffffff;
+            height: 150px;
+            width: 100%;
+            clip-path: ellipse(120% 120% at 100% -50%);
+            display: flex;
+        }
+
+        .ellipse-divider-fill {
+            background-color: #f3c200;
+        }
+
+        .section2 {
+            position: relative;
+            z-index: 1;
+            margin-left: 200px;
+            margin-right: 200px;
+            background-color: #f3c200; /* Background color for the section */
+            text-align: center;
+        }
+
+        .section3 {
+            position: relative;
+            z-index: 1;
+            margin-left: 200px;
+            margin-right: 200px;
+            background-color: white; /* Background color for the section */
+            text-align: center;
+        }
+
+        .sub-column1 {
+            width: 20%; /* 50% width for each column with spacing */
+            display: inline-block;
+        }
+
+        .sub-column2 {
+            width: 70%; /* 50% width for each column with spacing */
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        @font-face {
+            font-family: 'Space Grotesk';
+            src: url('/static/fonts/SpaceGrotesk-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .grotext {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 30px;
+        }
+
+        /* Create a row with three columns */
+        .image-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Style for each column */
+        .image-column {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Style for the image */
+        .image-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        /* Style for the text */
+        .image-content .text {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        /* Style for the container that holds image and text */
+        .image-content-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .image-content-inline .text-inline {
+            margin-left: 10px; /* Add spacing between image and text */
+        }
+
+        /* Style for the button */
+        .early-access-button {
+            display: inline-block;
+            padding: 10px 100px;
+            margin-top: 80%;
+            background-color: #f3c200; /* Yellow background color */
+            color: white; /* Text color (usually black or a darker color) */
+            border: none;
+            border-radius: 20px; /* Rounded corners */
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+
+        /* Hover effect */
+        .early-access-button:hover {
+            background-color: black; /* Lighter yellow on hover */
+            color: white;
+        }
+
+        /* Features */
+
+        .feature {
+            align-content: flex-start;
+            text-align: left;
+        }
+
+        .feature-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            max-width: 50%;
+        }
+
+        .feature-description {
+            font-family: Helvetica;
+            font-size: initial;
+            max-width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="left-pane">
+        <div class="middle-div">
+            Left Content
+        </div>
+    </div>
+    <div class="right-pane">
+        <a>Home</a>
+        <a>What is it?</a>
+        <a>Contribute</a>
+        <a>Contact</a>
+        <button>Get Involved</button>
+    </div>
+</header>
+
+<div class="content">
+    <div class="container" style="min-height: 600px">
+        <div class="column">
+            <!-- This is the first panel-->
+            <div class="column2" style="text-align: left; margin-top: 100px">
+                <a class="grotext" style="font-size: 40px">Deploy.</a>
+                <br>
+                <a class="grotext" style="font-size: 40px">Benchmark. Create.</a>
+
+                <p style="text-align: left; min-width: 200px; max-width: 400px; font-size: 20px">
+                    NeurIO is an end-to-end open source platform for benchmarking embedded machine learning.
+                    It's a comprehensive and flexible tool for deploying neural networks on embedded devices that lets
+                    engineers and researchers push the state-of-the-art in low power ML, and
+                    build and deploy ML-powered
+                    applications for IoT.
+                </p>
+                <!-- This contains the 3 sub logos-->
+                <div class="container" style="max-height: 100px">
+                    <div class="column">
+                        <div class="sub-column1">
+                            <img src="/static/images/open_in_full_FILL0_wght400_GRAD0_opsz24.png" height="30px">
+                        </div>
+
+                        <div class="sub-column2">
+                            <a>End-to-end</a>
+                            <br>
+                            <a>Solution</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="sub-column1">
+                            <img src="/static/images/fit_screen_FILL0_wght400_GRAD0_opsz24.png" height="30px">
+                        </div>
+
+                        <div class="sub-column2">
+                            <a>Flexible &</a>
+                            <br>
+                            <a>Scalable</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="sub-column1">
+                            <img src="/static/images/diversity_3_FILL0_wght400_GRAD0_opsz24.png" height="30px">
+                        </div>
+
+                        <div class="sub-column2">
+                            <a>Collaborate</a>
+                            <br>
+                            <a>Better</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This contains the third panel (LOGO)-->
+        <div class="column2">
+            <img src="/static/images/neurio_logo.svg"
+                 style="width: 140%; margin-top: 20%; margin-left: -10%; z-index: -5">
+        </div>
+    </div>
+</div>
+
+<div class="ellipse-divider-fill">
+    <div class="ellipse-divider">
+    </div>
+</div>
+
+<div style="background-color: #f3c200; padding-bottom: 80px">
+    <div class="section2">
+        <div class="container">
+            <div class="column2">
+                <a class="grotext" style="font-size: 30px">Empower Your Embedded</a>
+                <br>
+                <a class="grotext" style="font-size: 30px">Machine Learning</a>
+            </div>
+            <div class="column2">
+                <p>NeurIO is an open source platform that provides tools to build, train and deploy machine learning
+                    models on embedded devices. Our platform provides end-to-end solutions for researchers to push the
+                    state-of-the-art in low-power ML, and build and deploy ML-powered applications for IoT. </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div>
+    <div class="section3">
+        <div class="container">
+            <div class="column2">
+                <div>
+                    <a class="grotext" style="font-size: 30px">What NeurIO offers</a>
+                </div>
+                <div>
+                    <p>NeurIO provides benchmarking tools and an open source platform to deploy neural networks on
+                        embedded
+                        devices. Our platform is a comprehensive and flexible tool for researchers to push the
+                        state-of-the-art in low-power ML, and build and deploy ML-powered applications for IoT.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <div class="content">
+        <div class="container" style="min-height: 300px">
+            <div class="column">
+                <p>Picture1</p>
+            </div>
+            <div class="column">
+                <p>Picture2</p>
+            </div>
+            <div class="column">
+                <p>Picture3</p>
+            </div>
+        </div>
+    </div>
+    -->
+
+    <div class="content">
+        <div class="container" style="min-height: 300px">
+            <div class="column">
+                <div class="feature">
+                    <div class="feature-title">
+                        <p>Benchmarking Tools</p>
+                    </div>
+                    <div class="feature-description">
+                        <p>NeurIO provides benchmarking tools for researchers to compare the performance of different
+                            machine learning models on embedded devices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="feature">
+                    <div class="feature-title">
+                        <p>Open source Platform</p>
+                    </div>
+                    <div class="feature-description">
+                        <p>NeurIO provides an open source library in Python to optimize and deploy machine learning
+                            models
+                            on embedded devices.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="feature">
+                    <div class="feature-title">
+                        <p>Active Community</p>
+                    </div>
+                    <div class="feature-description">
+                        <p>NeurIO is actively developed and maintained by important academic and industrial actors in
+                            the
+                            field of low-power machine learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="background-color: #f3c200; min-height: 400px">
+        <div style="background-color: #9C1A1C; min-height: 100px; margin-left: 100px; margin-right: 100px">
+
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="column">
+                    <p>This is the left column.</p>
+                </div>
+                <div class="column">
+                    <p>This is the center column.</p>
+                </div>
+                <div class="column">
+                    <p>This is the right column.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
