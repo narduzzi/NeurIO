@@ -1,0 +1,601 @@
+
+
+<!DOCTYPE html>
+
+
+<html data-theme="light">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>neurio.benchmarking.suites.block_based_benchmarking &#8212; NeurIO 0.0.1dev documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../../_static/js/mermaid.js"></script>
+    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/neurio/benchmarking/suites/block_based_benchmarking';</script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="light">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../../../index.html">
+  
+  
+  
+  
+    
+    
+    
+    <img src="../../../../_static/NeurIO_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../../../_static/NeurIO_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../basics/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basics/getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basics/generic_deployment.html">Generic Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../basics/results_handling.html">Results handling</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../advanced/benchmarking/benchmarking.html">Benchmarking Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced/benchmarking/model_based_benchmarking.html">Model-based benchmarks</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/benchmarking/block_based_benchmarking.html">Block-based Benchmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/benchmarking/tiny_ml_perf.html">TinyML Perf Benchmark</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../advanced/benchmarking/task_based_benchmarking.html">Task-based Benchmarking</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../advanced/api_reference/api_reference.html">API Reference</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced/api_reference/tasks/tasks.html">Tasks</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/tasks/classification_tasks.html">Classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/tasks/regression_tasks.html">Regression</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced/api_reference/devices/devices.html">Devices</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/devices/base_device_class.html">Base class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/devices/physical_devices.html">Physical Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/devices/virtual_devices.html">Virtual Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../../advanced/api_reference/benchmarks/benchmarking_suites.html">Benchmarks</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/benchmarks/benchmark.html">Benchmark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../advanced/api_reference/benchmarks/layer_based_benchmark.html">Layer-Based Benchmark</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced/CHANGELOG.html">Change log</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribution</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribution/CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribution/ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for neurio.benchmarking.suites.block_based_benchmarking</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/user/bin/env python</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Author: Simon Narduzzi</span>
+<span class="sd">Email: simon.narduzzi@csem.ch</span>
+<span class="sd">Copyright: CSEM, 2023</span>
+<span class="sd">Creation: 05.10.23</span>
+<span class="sd">Description: Block based benchmarks</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+<span class="kn">from</span> <span class="nn">neurio.devices.device</span> <span class="kn">import</span> <span class="n">Device</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">Conv3D</span><span class="p">,</span> <span class="n">DepthwiseConv2D</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">AveragePooling1D</span><span class="p">,</span> <span class="n">AveragePooling2D</span><span class="p">,</span> \
+    <span class="n">MaxPooling1D</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">BatchNormalization</span><span class="p">,</span> <span class="n">Reshape</span><span class="p">,</span> <span class="n">ZeroPadding1D</span><span class="p">,</span> <span class="n">ZeroPadding2D</span><span class="p">,</span> <span class="n">Activation</span>
+
+
+<div class="viewcode-block" id="Benchmark"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/benchmark.html#neurio.benchmarking.suites.Benchmark">[docs]</a><span class="k">class</span> <span class="nc">Benchmark</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Base class for benchmarks</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__int__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+
+<div class="viewcode-block" id="Benchmark.run_on"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/benchmark.html#neurio.benchmarking.suites.Benchmark.run_on">[docs]</a>    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">run_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">Device</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the Benchmark on a target device.</span>
+
+<span class="sd">        :param device: the target device</span>
+<span class="sd">        :return: the results as JSON</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span></div></div>
+
+
+<div class="viewcode-block" id="LayerBasedBenchmark"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/layer_based_benchmark.html#neurio.benchmarking.suites.LayerBasedBenchmark">[docs]</a><span class="k">class</span> <span class="nc">LayerBasedBenchmark</span><span class="p">(</span><span class="n">Benchmark</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Benchmarking suite to test the inference of single layers on a given device.</span>
+
+<span class="sd">    The list of layer is as follows:</span>
+
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Block            | Config-1              | Config-2              | Config-3              | Config-4              |</span>
+<span class="sd">    +==================+=======================+=======================+=======================+=======================+</span>
+<span class="sd">    | Convolutional 1D | filters 32, stride 1  | filters 32, stride 2  | filters 64, stride 1  | filters 64, stride 2  |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Convolutional 2D | filters 32, stride 1  | filters 32, stride 2  | filters 64, stride 1  | filters 64, stride 2  |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Convolutional 2D | filters 32, 1x1       | filters 32, 3x3       | filters 32, 5x5      | filters 64, 7x7        |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Depthwise 2D conv| filters 32, stride 1  | filters 32, stride 2  | filters 64, stride 1  | filters 64, stride 2  |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Convolutional 3D | filters 32, stride 1  | filters 32, stride 2  | filters 64, stride 1  | filters 64, stride 2  |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Fully connected  | 128-32 neurons        | 256-64 neurons        | 512-128 neurons       | 1024-256 neurons      |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | AvgPooling1D     | 2, stride 1           | 2, stride 2           | 4, stride 2           | 7, stride 1           |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | AvgPooling2D     | 2x2, stride 1         | 2x2, stride 2         | 4x4, stride 2         | 7x7, stride 1         |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | MaxPooling1D     | 2, stride 1           | 2, stride 2           | 4, stride 2           | 7, stride 1           |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | MaxPooling2D     | 2x2, stride 1         | 2x2, stride 2         | 4x4, stride 2         | 7x7, stride 1         |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Activation       | ReLU                  | Sigmoid               | ReLU6                 | Tanh                  |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Batch norm       | 1D                    | 2D                    | 3D                    | 4D                    |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    | Reshape          | 1D                    | 2D                    | 3D                    | 4D                    |</span>
+<span class="sd">    +------------------+-----------------------+-----------------------+-----------------------+-----------------------+</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">num_inference</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Constructor of the LayerBasedBenchmark.</span>
+
+<span class="sd">        :param seed: the seed to intialize the weights of the models and the mock data.</span>
+<span class="sd">        :param num_inference: number of (random) inference per model.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="n">configuration_path</span> <span class="o">=</span> <span class="s2">&quot;assets/single_layers.json&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">configuration_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_inference</span> <span class="o">=</span> <span class="n">num_inference</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="n">seed</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+        <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__instanciate_layer__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">layer</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Instantiate the layer given its configuration.</span>
+
+<span class="sd">        :param layer: a json describing the layer type and its parameters</span>
+<span class="sd">        :return: an instance of tf.keras.layers.Layer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">params</span> <span class="o">=</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Parameters&quot;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Conv1D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;filters&quot;</span><span class="p">],</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;kernel_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span>
+                          <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Conv2D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Conv2D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;filters&quot;</span><span class="p">],</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;kernel_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span>
+                          <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Conv3D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Conv3D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;filters&quot;</span><span class="p">],</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;kernel_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span>
+                          <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;DepthwiseConv2D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">DepthwiseConv2D</span><span class="p">(</span><span class="n">depth_multiplier</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;filters&quot;</span><span class="p">],</span> <span class="n">kernel_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;kernel_size&quot;</span><span class="p">],</span>
+                                   <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span>
+                                   <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Dense&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Dense</span><span class="p">(</span><span class="n">units</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;units&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;AveragePooling1D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">AveragePooling1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;pool_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;AveragePooling2D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">AveragePooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;pool_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;MaxPooling1D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MaxPooling1D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;pool_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;MaxPooling2D&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;pool_size&quot;</span><span class="p">],</span> <span class="n">strides</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;strides&quot;</span><span class="p">],</span> <span class="n">padding</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;padding&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Activation&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Activation</span><span class="p">(</span><span class="n">activation</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;activation&quot;</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;BatchNormalization&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">BatchNormalization</span><span class="p">()</span>
+        <span class="k">elif</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Reshape&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Reshape</span><span class="p">(</span><span class="n">target_shape</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;target_shape&quot;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Unknown layer: &quot;</span> <span class="o">+</span> <span class="n">layer</span><span class="p">[</span><span class="s2">&quot;Layer&quot;</span><span class="p">])</span>
+
+    <span class="k">def</span> <span class="nf">__create_model__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a Keras model with a single layer</span>
+
+<span class="sd">        :param line: line index of the configuration</span>
+<span class="sd">        :param config: configuration index of the configuration</span>
+<span class="sd">        :return: Keras model containing a single layer.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">layers</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;Layers&quot;</span><span class="p">]</span>
+        <span class="n">model_layers</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">:</span>
+            <span class="n">instanciated_layer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__instanciate_layer__</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+            <span class="n">model_layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">instanciated_layer</span><span class="p">)</span>
+
+        <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">(</span><span class="n">model_layers</span><span class="p">)</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;Input_shape&quot;</span><span class="p">]]</span>  <span class="c1"># In case of dense block, use the first connected layer as input</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">input_shape</span><span class="o">=</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">model</span>
+
+<div class="viewcode-block" id="LayerBasedBenchmark.get_model"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/layer_based_benchmark.html#neurio.benchmarking.suites.LayerBasedBenchmark.get_model">[docs]</a>    <span class="k">def</span> <span class="nf">get_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the model at the location x,y of the LayerBasedBenchmark</span>
+
+<span class="sd">        :param line_idx:</span>
+<span class="sd">        :param config_idx:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span><span class="p">[</span><span class="s2">&quot;configurations&quot;</span><span class="p">][</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]</span>
+        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__create_model__</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="LayerBasedBenchmark.info"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/layer_based_benchmark.html#neurio.benchmarking.suites.LayerBasedBenchmark.info">[docs]</a>    <span class="k">def</span> <span class="nf">info</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Prints the structure of the LayerBasedBenchmark.</span>
+
+<span class="sd">        :param line_idx: If set, prints all models in the line x from the LayerBasedBenchmark</span>
+<span class="sd">        :param config_idx: If set, prints the model located at the line x and column y provided.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">line_idx</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">config_idx</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="k">if</span> <span class="n">line_idx</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">config_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;If config is specified, line must be specified too&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">line_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">config_idx</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span><span class="p">[</span><span class="s2">&quot;configurations&quot;</span><span class="p">][</span><span class="n">line_idx</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">line_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">config_idx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span><span class="p">[</span><span class="s2">&quot;configurations&quot;</span><span class="p">][</span><span class="n">line_idx</span><span class="p">][</span><span class="n">config_idx</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">conf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span>  <span class="c1"># print description</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># pretty print json configuration</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">conf</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="LayerBasedBenchmark.run_on"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/layer_based_benchmark.html#neurio.benchmarking.suites.LayerBasedBenchmark.run_on">[docs]</a>    <span class="k">def</span> <span class="nf">run_on</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">:</span> <span class="n">Device</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Run the Benchmark on a target device.</span>
+<span class="sd">        Each model of the benchmark is compiled and deployed on the device for inference.</span>
+<span class="sd">        For the inference, random data is generated according to the dimension of the input, and infered using the device `infer` method.</span>
+
+<span class="sd">        :param device: a device inheriting from `Device`</span>
+<span class="sd">        :return: the results as JSON</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">all_models</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">configurations</span><span class="p">[</span><span class="s2">&quot;configurations&quot;</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_models</span><span class="p">)):</span>
+            <span class="n">configs_layer</span> <span class="o">=</span> <span class="n">all_models</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">configs_layer</span><span class="p">)):</span>
+                <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
+                <span class="n">configuration_model</span> <span class="o">=</span> <span class="n">configs_layer</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__create_model__</span><span class="p">(</span><span class="n">configuration_model</span><span class="p">)</span>
+
+                <span class="n">device</span><span class="o">.</span><span class="n">prepare_for_inference</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">num_inference</span><span class="p">,</span> <span class="o">*</span><span class="n">configuration_model</span><span class="p">[</span><span class="s2">&quot;Input_shape&quot;</span><span class="p">]])</span>
+                <span class="n">y_pred</span><span class="p">,</span> <span class="n">profile</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+                <span class="n">configuration_model</span><span class="p">[</span><span class="s2">&quot;results&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">profile</span>
+        <span class="k">return</span> <span class="n">all_models</span></div></div>
+
+
+<span class="k">class</span> <span class="nc">MockDevice</span><span class="p">(</span><span class="n">Device</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;dummy&quot;</span>
+
+    <span class="k">def</span> <span class="nf">prepare_for_inference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">32</span><span class="p">,</span> <span class="n">return_stats</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">times</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+            <span class="n">y_pred</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+            <span class="n">predictions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_pred</span><span class="p">)</span>
+            <span class="n">times</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">s</span><span class="p">)</span>
+
+        <span class="n">profiler</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Inference time&quot;</span><span class="p">:</span> <span class="n">times</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">profiler</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">benchmark</span> <span class="o">=</span> <span class="n">LayerBasedBenchmarking</span><span class="p">()</span>
+    <span class="n">device</span> <span class="o">=</span> <span class="n">MockDevice</span><span class="p">()</span>
+
+    <span class="n">results</span> <span class="o">=</span> <span class="n">benchmark</span><span class="o">.</span><span class="n">run_on</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+</pre></div>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Simon Narduzzi, Dorvan Favre, Romain Gaulier, Nicolas Cantale, and others
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022–2023, CSEM.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
