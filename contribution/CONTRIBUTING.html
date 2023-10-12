@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Contributing &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,20 +39,19 @@
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contribution/CONTRIBUTING';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Adding a physical device in NeurIO" href="ADD_A_DEVICE.html" />
     <link rel="prev" title="Change log" href="../advanced/CHANGELOG.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -185,6 +184,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -346,7 +349,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="contributing">
-<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">#</a></h1>
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h1>
 <p>Contributors are welcome! We welcome contributions from the community to make this project even better! Whether it’s
 code improvements, bug fixes, documentation updates, or new feature suggestions, your input is valuable to us. Feel free
 to fork the repository and submit your pull requests.</p>
@@ -357,7 +360,7 @@ to fork the repository and submit your pull requests.</p>
 </ul>
 <p>Make sure to check our <a class="reference internal" href="CODE_OF_CONDUCT.html"><span class="std std-doc">Code of Conduct</span></a>.</p>
 <section id="getting-started">
-<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this headline">#</a></h2>
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h2>
 <p>If you would like to contribute to NeurIO, then you should begin by fork the public repositiory, and clone it on your
 development machine.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/your_profile/NeurIO
@@ -374,7 +377,7 @@ development machine.</p>
 </div>
 </section>
 <section id="adding-a-feature">
-<h2>Adding a feature<a class="headerlink" href="#adding-a-feature" title="Permalink to this headline">#</a></h2>
+<h2>Adding a feature<a class="headerlink" href="#adding-a-feature" title="Permalink to this heading">#</a></h2>
 <p>The main branch is <code class="docutils literal notranslate"><span class="pre">development</span></code>. You should commit your modification to a new feature branch.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/my-feature
 <span class="w">    </span>...
@@ -391,7 +394,7 @@ When you are ready, make a merge request on <a class="reference external" href="
 the original repository.</p>
 </section>
 <section id="running-tests">
-<h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">#</a></h2>
+<h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">#</a></h2>
 <p>As part of the merge review process, we will check that all the unit tests pass.
 You can run tests locally using the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>pytest<span class="w"> </span>tests

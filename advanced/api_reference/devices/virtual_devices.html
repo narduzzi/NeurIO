@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Virtual Devices &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,20 +39,19 @@
   <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/api_reference/devices/virtual_devices';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Benchmarks" href="../benchmarks/benchmarking_suites.html" />
     <link rel="prev" title="Physical Devices" href="physical_devices.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -185,6 +184,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../contribution/ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -331,8 +334,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canaan">Canaan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">Tensorflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canaan">Canaan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual"><code class="docutils literal notranslate"><span class="pre">K210Virtual</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual.is_alive"><code class="docutils literal notranslate"><span class="pre">K210Virtual.is_alive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">Tensorflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.is_alive"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.create_log_dirs"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.create_log_dirs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.prepare_for_inference()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.save_data"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.save_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.detach"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.detach()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.predict"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -345,21 +365,21 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="virtual-devices">
-<h1>Virtual Devices<a class="headerlink" href="#virtual-devices" title="Permalink to this headline">#</a></h1>
+<h1>Virtual Devices<a class="headerlink" href="#virtual-devices" title="Permalink to this heading">#</a></h1>
 <section id="canaan">
-<h2>Canaan<a class="headerlink" href="#canaan" title="Permalink to this headline">#</a></h2>
+<h2>Canaan<a class="headerlink" href="#canaan" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.devices.virtual.canaan.kendryte.K210Virtual">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.virtual.canaan.kendryte.</span></span><span class="sig-name descname"><span class="pre">K210Virtual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'virtual'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'K210'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/canaan/kendryte.html#K210Virtual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.virtual.canaan.kendryte.</span></span><span class="sig-name descname"><span class="pre">K210Virtual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'virtual'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'K210'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/canaan/kendryte.html#K210Virtual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="neurio.devices.virtual.canaan.kendryte.K210Virtual.is_alive">
 <span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/canaan/kendryte.html#K210Virtual.is_alive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual.is_alive" title="Permalink to this definition">#</a></dt>
 <dd><p>Check if the device is alive</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>timeout</strong> – timeout in seconds</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Return true if the device is alive (connected), false otherwise</p>
 </dd>
 </dl>
@@ -369,19 +389,19 @@ document.write(`
 
 </section>
 <section id="tensorflow">
-<h2>Tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this headline">#</a></h2>
+<h2>Tensorflow<a class="headerlink" href="#tensorflow" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.virtual.tensorflow.tflite.</span></span><span class="sig-name descname"><span class="pre">TFLiteVirtual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'is_quantized':</span> <span class="pre">True}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.virtual.tensorflow.tflite.</span></span><span class="sig-name descname"><span class="pre">TFLiteVirtual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{'is_quantized':</span> <span class="pre">True}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py method">
 <dt class="sig sig-object py" id="neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.is_alive">
 <span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual.is_alive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.is_alive" title="Permalink to this definition">#</a></dt>
 <dd><p>Check if the device is alive</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>timeout</strong> – timeout in seconds</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Return true if the device is alive (connected), false otherwise</p>
 </dd>
 </dl>
@@ -394,10 +414,10 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.prepare_for_inference">
-<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">keras.engine.training.Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual.prepare_for_inference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.prepare_for_inference" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual.prepare_for_inference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.prepare_for_inference" title="Permalink to this definition">#</a></dt>
 <dd><p>Prepare the device for inference. This function should be called before any inference.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>model</strong> – model to deploy on the device</p></li>
 <li><p><strong>kwargs</strong> – other parameters relevant for the preparation of the device</p></li>
@@ -418,7 +438,7 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">neurio.common.Prediction</span></span></span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.predict" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Prediction</span></span></span><a class="reference internal" href="../../../_modules/neurio/devices/virtual/tensorflow/tflite.html#TFLiteVirtual.predict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.predict" title="Permalink to this definition">#</a></dt>
 <dd><p>Predicts the data
 :param data: input data to predict
 :param batch_size: batch size for the prediction
@@ -476,8 +496,25 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canaan">Canaan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">Tensorflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#canaan">Canaan</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual"><code class="docutils literal notranslate"><span class="pre">K210Virtual</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.canaan.kendryte.K210Virtual.is_alive"><code class="docutils literal notranslate"><span class="pre">K210Virtual.is_alive()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow">Tensorflow</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.is_alive"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.create_log_dirs"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.create_log_dirs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.prepare_for_inference()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.save_data"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.save_data()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.detach"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.detach()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.virtual.tensorflow.tflite.TFLiteVirtual.predict"><code class="docutils literal notranslate"><span class="pre">TFLiteVirtual.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

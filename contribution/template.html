@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Template for device documentation &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,18 +39,19 @@
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contribution/template';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -183,6 +184,10 @@
 <li class="toctree-l1"><a class="reference internal" href="ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -358,30 +363,30 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="template-for-device-documentation">
-<h1>Template for device documentation<a class="headerlink" href="#template-for-device-documentation" title="Permalink to this headline">#</a></h1>
+<h1>Template for device documentation<a class="headerlink" href="#template-for-device-documentation" title="Permalink to this heading">#</a></h1>
 <p>This template can be used to create the documentation for a new device.</p>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>This section describes the device and its main characteristics.</p>
 <section id="device-characteristics">
-<h3>Device Characteristics<a class="headerlink" href="#device-characteristics" title="Permalink to this headline">#</a></h3>
+<h3>Device Characteristics<a class="headerlink" href="#device-characteristics" title="Permalink to this heading">#</a></h3>
 <p>Describe the technology used by the device, as well as the manufacturer and the device name.
 Any information about the device (bus speed, memory) is welcome.</p>
 </section>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">#</a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
 <p>This steps describe what is needed to install the device and use it with NeurIO.
 This might include downloading external libraries or tools.</p>
 <section id="prerequisites">
-<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">#</a></h3>
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h3>
 <p>To use {DEVICE} with NeurIO, you need to install the following tools:</p>
 <ul class="simple">
 <li><p>tool1</p></li>
 <li><p>tool2</p></li>
 </ul>
 <section id="installation-steps">
-<h4>Installation steps<a class="headerlink" href="#installation-steps" title="Permalink to this headline">#</a></h4>
+<h4>Installation steps<a class="headerlink" href="#installation-steps" title="Permalink to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>step1</p></li>
 <li><p>step2</p></li>
@@ -389,17 +394,17 @@ This might include downloading external libraries or tools.</p>
 </section>
 </section>
 <section id="usage">
-<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h3>
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
 <p>To use NeurIO and benchmark models on {DEVICE}, you need to connect the board to the computer and run the following command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>TODO
 </pre></div>
 </div>
 </section>
 <section id="execution-process">
-<h3>Execution process<a class="headerlink" href="#execution-process" title="Permalink to this headline">#</a></h3>
+<h3>Execution process<a class="headerlink" href="#execution-process" title="Permalink to this heading">#</a></h3>
 <p>The execution process for {DEVICE} is the following</p>
 <section id="system-preparation">
-<h4>System preparation<a class="headerlink" href="#system-preparation" title="Permalink to this headline">#</a></h4>
+<h4>System preparation<a class="headerlink" href="#system-preparation" title="Permalink to this heading">#</a></h4>
 <div class="mermaid">
             %%{init: {'theme':'dark'}}%%
 
@@ -447,7 +452,7 @@ flowchart TD
         </div></section>
 </section>
 <section id="inference">
-<h3>Inference<a class="headerlink" href="#inference" title="Permalink to this headline">#</a></h3>
+<h3>Inference<a class="headerlink" href="#inference" title="Permalink to this heading">#</a></h3>
 <div class="mermaid">
             %%{init: {'theme':'dark'}}%%
 

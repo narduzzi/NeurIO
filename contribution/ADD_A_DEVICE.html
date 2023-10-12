@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Adding a physical device in NeurIO &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,20 +39,19 @@
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contribution/ADD_A_DEVICE';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Code of Conduct" href="CODE_OF_CONDUCT.html" />
     <link rel="prev" title="Contributing" href="CONTRIBUTING.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -185,6 +184,10 @@
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -348,12 +351,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="adding-a-physical-device-in-neurio">
-<h1>Adding a physical device in NeurIO<a class="headerlink" href="#adding-a-physical-device-in-neurio" title="Permalink to this headline">#</a></h1>
+<h1>Adding a physical device in NeurIO<a class="headerlink" href="#adding-a-physical-device-in-neurio" title="Permalink to this heading">#</a></h1>
 <p>NeurIO is a powerful library designed to simplify the deployment of machine learning models onto hardware devices.
 Adding a new device to the NeurIO library allows you to leverage its capabilities for efficient model deployment. Here’s
 a step-by-step guide to adding a device to the NeurIO library:</p>
 <section id="step-1-download-neurio-and-create-a-new-branch">
-<h2>Step 1: Download NeurIO and create a new branch<a class="headerlink" href="#step-1-download-neurio-and-create-a-new-branch" title="Permalink to this headline">#</a></h2>
+<h2>Step 1: Download NeurIO and create a new branch<a class="headerlink" href="#step-1-download-neurio-and-create-a-new-branch" title="Permalink to this heading">#</a></h2>
 <p>Download the NeurIO from Github:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/csem/neurio.git
 </pre></div>
@@ -364,7 +367,7 @@ a step-by-step guide to adding a device to the NeurIO library:</p>
 </div>
 </section>
 <section id="step-2-create-a-new-device-class">
-<h2>Step 2:  Create a new Device Class<a class="headerlink" href="#step-2-create-a-new-device-class" title="Permalink to this headline">#</a></h2>
+<h2>Step 2:  Create a new Device Class<a class="headerlink" href="#step-2-create-a-new-device-class" title="Permalink to this heading">#</a></h2>
 <p>Inside the NeurIO repository, navigate to the neurio/devices directory and list all constructors.</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>neurio/devices/physical<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>ls
 </pre></div>
@@ -390,7 +393,7 @@ Customize the class according to your platform’s needs and functionalities.</p
 </div>
 </section>
 <section id="step-3-create-the-documentation-for-the-device">
-<h2>Step 3: Create the documentation for the device<a class="headerlink" href="#step-3-create-the-documentation-for-the-device" title="Permalink to this headline">#</a></h2>
+<h2>Step 3: Create the documentation for the device<a class="headerlink" href="#step-3-create-the-documentation-for-the-device" title="Permalink to this heading">#</a></h2>
 <p>After the implementation of the device class, you must create the documentation to ensure that the device is properly
 documented.
 The documentation is written in Markdown and is located in the docs/supported device directory.</p>
@@ -410,7 +413,7 @@ of the <a class="reference internal" href="../basics/generic_deployment.html"><s
 documentation for your device.</p>
 </section>
 <section id="step-4-create-a-functional-test-for-your-device">
-<h2>Step 4: Create a functional test for your device<a class="headerlink" href="#step-4-create-a-functional-test-for-your-device" title="Permalink to this headline">#</a></h2>
+<h2>Step 4: Create a functional test for your device<a class="headerlink" href="#step-4-create-a-functional-test-for-your-device" title="Permalink to this heading">#</a></h2>
 <p>Each device in NeurIO has a functional test that ensures that the device is working properly.
 Whenever a new device is added to NeurIO, one must create a functional test for it.
 The functional test is a Python script that performs a simple inference task on the device.</p>
@@ -431,7 +434,7 @@ model name).</p>
 </div>
 </section>
 <section id="step-5-submit-a-pull-request">
-<h2>Step 5: Submit a pull request<a class="headerlink" href="#step-5-submit-a-pull-request" title="Permalink to this headline">#</a></h2>
+<h2>Step 5: Submit a pull request<a class="headerlink" href="#step-5-submit-a-pull-request" title="Permalink to this heading">#</a></h2>
 <p>Once you have completed the previous steps, you can submit a pull request to the NeurIO repository to merge
 on the <code class="docutils literal notranslate"><span class="pre">development</span></code> branch.</p>
 </section>

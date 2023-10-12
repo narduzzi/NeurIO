@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Block-based Benchmark &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,20 +39,19 @@
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/benchmarking/block_based_benchmarking';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="TinyML Perf Benchmark" href="tiny_ml_perf.html" />
     <link rel="prev" title="Model-based benchmarks" href="model_based_benchmarking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -185,6 +184,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribution/ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -351,13 +354,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="block-based-benchmark">
-<h1>Block-based Benchmark<a class="headerlink" href="#block-based-benchmark" title="Permalink to this headline">#</a></h1>
+<h1>Block-based Benchmark<a class="headerlink" href="#block-based-benchmark" title="Permalink to this heading">#</a></h1>
 <p>Edge devices are usually very constrained in terms of resources. Some devices may execute some layer faster than other,
 while some devices might not support all layers. This makes it difficult to compare the performance of different devices.</p>
 <p>To solve this problem, NeurIO provides a block-based benchmarking framework. This framework allows to compare the performance
 of different devices by measuring the time it takes to execute each layer of the model.</p>
 <section id="layer-based-benchmarking">
-<span id="id1"></span><h2>Layer-based benchmarking<a class="headerlink" href="#layer-based-benchmarking" title="Permalink to this headline">#</a></h2>
+<span id="id1"></span><h2>Layer-based benchmarking<a class="headerlink" href="#layer-based-benchmarking" title="Permalink to this heading">#</a></h2>
 <p>The basic blocks are consist in popular layers used in neural networks. These blocks are:</p>
 <ul class="simple">
 <li><p>Convolutional 1D layer</p></li>
@@ -373,13 +376,6 @@ of different devices by measuring the time it takes to execute each layer of the
 </ul>
 <p>The available configurations for each block are as follow</p>
 <table class="table">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Block</p></th>
 <th class="head"><p>Config-1</p></th>
@@ -481,7 +477,7 @@ of different devices by measuring the time it takes to execute each layer of the
 </tbody>
 </table>
 <section id="usage">
-<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h3>
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
 <p>To use the block-based benchmarking framework, you need to create a <code class="xref py py-obj docutils literal notranslate"><span class="pre">LayerBasedBenchmark</span></code> object. This object will be used to
 benchmark the different blocks. The <code class="xref py py-obj docutils literal notranslate"><span class="pre">LayerBasedBenchmark</span></code> object can be created as follow:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neurio.benchmark</span> <span class="kn">import</span> <span class="n">LayerBasedBenchmark</span>
@@ -497,7 +493,7 @@ This object contains the results of the benchmark.</p>
 </section>
 </section>
 <section id="cell-based-benchmarking">
-<span id="id2"></span><h2>Cell-based benchmarking<a class="headerlink" href="#cell-based-benchmarking" title="Permalink to this headline">#</a></h2>
+<span id="id2"></span><h2>Cell-based benchmarking<a class="headerlink" href="#cell-based-benchmarking" title="Permalink to this heading">#</a></h2>
 <p>Cells are blocks that are composed of multiple layers. Usually, they are building blocks of popular topologies
 used in neural networks. These cells can be:</p>
 <ul class="simple">
@@ -510,13 +506,6 @@ used in neural networks. These cells can be:</p>
 </ul>
 <p>The available configurations for each block are as follow:</p>
 <table class="table">
-<colgroup>
-<col style="width: 16%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-<col style="width: 21%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Block</p></th>
 <th class="head"><p>Config-1</p></th>
@@ -571,7 +560,7 @@ used in neural networks. These cells can be:</p>
 </tbody>
 </table>
 <section id="id3">
-<h3>Usage<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<h3>Usage<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>To use the composed block-based benchmarking framework, you need to create a <code class="xref py py-obj docutils literal notranslate"><span class="pre">CellBasedBenchmark</span></code> object.
 This object will be used to benchmark the different blocks. The <code class="xref py py-obj docutils literal notranslate"><span class="pre">CellBasedBenchmark</span></code> object can be used as follow:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neurio.benchmark</span> <span class="kn">import</span> <span class="n">CellBasedBenchmark</span>

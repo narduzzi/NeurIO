@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Generic Deployment &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,12 +39,13 @@
   <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'basics/generic_deployment';</script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -52,7 +53,7 @@
     <link rel="next" title="Results handling" href="results_handling.html" />
     <link rel="prev" title="Getting Started" href="getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -185,6 +186,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../contribution/ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -345,12 +350,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="generic-deployment">
-<h1>Generic Deployment<a class="headerlink" href="#generic-deployment" title="Permalink to this headline">#</a></h1>
+<h1>Generic Deployment<a class="headerlink" href="#generic-deployment" title="Permalink to this heading">#</a></h1>
 <p>This section describes the generic deployment process for a deep learning model. The process is divided into two main
 parts: System Preparation and Prediction. The first part describes the steps required to prepare the system for the
 deployment of the model. The second part describes the steps required to perform the prediction.</p>
 <section id="system-preparation">
-<h2>System Preparation<a class="headerlink" href="#system-preparation" title="Permalink to this headline">#</a></h2>
+<h2>System Preparation<a class="headerlink" href="#system-preparation" title="Permalink to this heading">#</a></h2>
 <p>The system preparation part is divided into four main steps: Model Training, Model Preparation, Inference Code
 Generation and Deployment. The first step is the data collection and model training. This step is performed on a
 workstation and is not part of NeurIO.</p>
@@ -398,7 +403,7 @@ flowchart TD
     end
         </div></section>
 <section id="prediction">
-<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">#</a></h2>
+<h2>Prediction<a class="headerlink" href="#prediction" title="Permalink to this heading">#</a></h2>
 <p>The prediction part is divided into three main steps: Data Preparation, Inference and Reporting. The first step is the
 data preparation, which is the process of preparing the data for the inference. Usually, the preprocessing occurs on the
 workstation, as it comes at an additional cost for the hardware. However, the preprocessing is highly dependent on the

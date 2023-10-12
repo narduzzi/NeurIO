@@ -35,7 +35,7 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(10)
 ])
 
-model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+model.compile(optimizer='adam', loss=tf.keras.losses.CategoricalCrossentropy(),
               metrics="accuracy")
 model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
 model.summary()

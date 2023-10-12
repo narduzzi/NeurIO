@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Classification &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,20 +39,19 @@
   <script src="../../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/api_reference/tasks/classification_tasks';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Regression" href="regression_tasks.html" />
     <link rel="prev" title="Tasks" href="tasks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -186,6 +185,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/FAQ.html">FAQ</a></li>
+</ul>
 
     </div>
 </nav></div>
@@ -308,7 +311,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -324,6 +329,68 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification"><code class="docutils literal notranslate"><span class="pre">MNISTClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.preprocess"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.preprocess()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.preprocess"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.preprocess()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.evaluate"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_metrics"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_test_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_train_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.preprocess"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.preprocess()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.prepare_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.prepare_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification"><code class="docutils literal notranslate"><span class="pre">SHDClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.prepare_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.prepare_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">SHDClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -334,11 +401,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="module-neurio.tasks.classification">
-<span id="classification"></span><h1>Classification<a class="headerlink" href="#module-neurio.tasks.classification" title="Permalink to this headline">#</a></h1>
+<span id="classification"></span><h1>Classification<a class="headerlink" href="#module-neurio.tasks.classification" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.tasks.classification.MNISTClassification">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.tasks.classification.</span></span><span class="sig-name descname"><span class="pre">MNISTClassification</span></span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/mnistClassification.html#MNISTClassification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.MNISTClassification" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurio.tasks.task.Task</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Task</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.MNISTClassification.preprocess">
 <span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/mnistClassification.html#MNISTClassification.preprocess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.MNISTClassification.preprocess" title="Permalink to this definition">#</a></dt>
@@ -357,7 +424,7 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.MNISTClassification.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurio.tasks.classification.MNISTClassification.get_data" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">array</span></span></span><a class="headerlink" href="#neurio.tasks.classification.MNISTClassification.get_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the data used for the task.
 :return: if validation_data is None, returns train_data, test_data. Otherwise, returns train_data, validation_data, test_data.</p>
 </dd></dl>
@@ -389,7 +456,7 @@ should be a description of the metrics.
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_train_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurio.tasks.classification.MNISTClassification.get_train_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the train data used for the task.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>X and Y, where X is the input(s) data and Y is the output(s) data.</p>
 </dd>
 </dl>
@@ -407,7 +474,7 @@ should be a description of the metrics.
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.tasks.classification.CIFAR10Classification">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.tasks.classification.</span></span><span class="sig-name descname"><span class="pre">CIFAR10Classification</span></span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/cifar10Classification.html#CIFAR10Classification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.CIFAR10Classification" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurio.tasks.task.Task</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Task</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.CIFAR10Classification.preprocess">
 <span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/cifar10Classification.html#CIFAR10Classification.preprocess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.CIFAR10Classification.preprocess" title="Permalink to this definition">#</a></dt>
@@ -424,7 +491,7 @@ should be a description of the metrics.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.CIFAR10Classification.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurio.tasks.classification.CIFAR10Classification.get_data" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">array</span></span></span><a class="headerlink" href="#neurio.tasks.classification.CIFAR10Classification.get_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the data used for the task.
 :return: if validation_data is None, returns train_data, test_data. Otherwise, returns train_data, validation_data, test_data.</p>
 </dd></dl>
@@ -456,7 +523,7 @@ should be a description of the metrics.
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_train_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurio.tasks.classification.CIFAR10Classification.get_train_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the train data used for the task.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>X and Y, where X is the input(s) data and Y is the output(s) data.</p>
 </dd>
 </dl>
@@ -474,7 +541,7 @@ should be a description of the metrics.
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.tasks.classification.ImageNetClassification">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.tasks.classification.</span></span><span class="sig-name descname"><span class="pre">ImageNetClassification</span></span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/imageNetClassification.html#ImageNetClassification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.ImageNetClassification" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurio.tasks.task.Task</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Task</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.ImageNetClassification.preprocess">
 <span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/imageNetClassification.html#ImageNetClassification.preprocess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.ImageNetClassification.preprocess" title="Permalink to this definition">#</a></dt>
@@ -493,7 +560,7 @@ should be a description of the metrics.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.ImageNetClassification.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurio.tasks.classification.ImageNetClassification.get_data" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">array</span></span></span><a class="headerlink" href="#neurio.tasks.classification.ImageNetClassification.get_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the data used for the task.
 :return: if validation_data is None, returns train_data, test_data. Otherwise, returns train_data, validation_data, test_data.</p>
 </dd></dl>
@@ -525,7 +592,7 @@ should be a description of the metrics.
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_train_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurio.tasks.classification.ImageNetClassification.get_train_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the train data used for the task.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>X and Y, where X is the input(s) data and Y is the output(s) data.</p>
 </dd>
 </dl>
@@ -543,7 +610,7 @@ should be a description of the metrics.
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.tasks.classification.NMNISTClassification">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.tasks.classification.</span></span><span class="sig-name descname"><span class="pre">NMNISTClassification</span></span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/nmnistClassification.html#NMNISTClassification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.NMNISTClassification" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurio.tasks.task.Task</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Task</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.NMNISTClassification.prepare_data">
 <span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/nmnistClassification.html#NMNISTClassification.prepare_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.NMNISTClassification.prepare_data" title="Permalink to this definition">#</a></dt>
@@ -560,7 +627,7 @@ should be a description of the metrics.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.NMNISTClassification.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurio.tasks.classification.NMNISTClassification.get_data" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">array</span></span></span><a class="headerlink" href="#neurio.tasks.classification.NMNISTClassification.get_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the data used for the task.
 :return: if validation_data is None, returns train_data, test_data. Otherwise, returns train_data, validation_data, test_data.</p>
 </dd></dl>
@@ -592,7 +659,7 @@ should be a description of the metrics.
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_train_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurio.tasks.classification.NMNISTClassification.get_train_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the train data used for the task.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>X and Y, where X is the input(s) data and Y is the output(s) data.</p>
 </dd>
 </dl>
@@ -610,7 +677,7 @@ should be a description of the metrics.
 <dl class="py class">
 <dt class="sig sig-object py" id="neurio.tasks.classification.SHDClassification">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.tasks.classification.</span></span><span class="sig-name descname"><span class="pre">SHDClassification</span></span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/shdClassification.html#SHDClassification"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.SHDClassification" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">neurio.tasks.task.Task</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Task</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.SHDClassification.prepare_data">
 <span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/tasks/classification/shdClassification.html#SHDClassification.prepare_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.tasks.classification.SHDClassification.prepare_data" title="Permalink to this definition">#</a></dt>
@@ -627,7 +694,7 @@ should be a description of the metrics.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.tasks.classification.SHDClassification.get_data">
-<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">numpy.array</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#neurio.tasks.classification.SHDClassification.get_data" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">array</span></span></span><a class="headerlink" href="#neurio.tasks.classification.SHDClassification.get_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the data used for the task.
 :return: if validation_data is None, returns train_data, test_data. Otherwise, returns train_data, validation_data, test_data.</p>
 </dd></dl>
@@ -659,7 +726,7 @@ should be a description of the metrics.
 <em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_train_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurio.tasks.classification.SHDClassification.get_train_data" title="Permalink to this definition">#</a></dt>
 <dd><p>Returns the train data used for the task.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>X and Y, where X is the input(s) data and Y is the output(s) data.</p>
 </dd>
 </dl>
@@ -711,6 +778,74 @@ should be a description of the metrics.
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification"><code class="docutils literal notranslate"><span class="pre">MNISTClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.preprocess"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.preprocess()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.MNISTClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">MNISTClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.preprocess"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.preprocess()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.evaluate"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_metrics"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_test_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_train_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.CIFAR10Classification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">CIFAR10Classification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.preprocess"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.preprocess()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.ImageNetClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">ImageNetClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.prepare_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.prepare_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.NMNISTClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">NMNISTClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification"><code class="docutils literal notranslate"><span class="pre">SHDClassification</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.prepare_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.prepare_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.evaluate"><code class="docutils literal notranslate"><span class="pre">SHDClassification.evaluate()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_metrics"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_metrics()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_metrics_info"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_metrics_info()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_test_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_test_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_train_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_train_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.tasks.classification.SHDClassification.get_validation_data"><code class="docutils literal notranslate"><span class="pre">SHDClassification.get_validation_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

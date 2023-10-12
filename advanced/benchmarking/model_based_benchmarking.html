@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html data-theme="light">
+<html lang="en" data-theme="light">
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
     <title>Model-based benchmarks &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -39,20 +39,19 @@
   <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../../_static/js/mermaid.js"></script>
-    <script src="https://unpkg.com/mermaid@9.4.0/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/benchmarking/model_based_benchmarking';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Block-based Benchmark" href="block_based_benchmarking.html" />
     <link rel="prev" title="Benchmarking Guide" href="benchmarking.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -185,6 +184,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../contribution/ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/FAQ.html">FAQ</a></li>
 </ul>
 
     </div>
@@ -334,18 +337,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="model-based-benchmarks">
-<h1>Model-based benchmarks<a class="headerlink" href="#model-based-benchmarks" title="Permalink to this headline">#</a></h1>
+<h1>Model-based benchmarks<a class="headerlink" href="#model-based-benchmarks" title="Permalink to this heading">#</a></h1>
 <p>Model-based benchmarks rely on architectures of neural networks to measure the performance.
 The weights of the architectures are either trained on a dataset or generated randomly.</p>
 <p>In NeurIO, we provide a set of model-based benchmarks that are based on popular neural network architectures.
 The benchmarks are designed to be simple to use and to be easily extensible.</p>
 <p>This is the list of available benchmarks that are based on models.</p>
 <table class="table">
-<colgroup>
-<col style="width: 18%" />
-<col style="width: 11%" />
-<col style="width: 71%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Benchmark Name</p></th>
 <th class="head"><p>Weights</p></th>
