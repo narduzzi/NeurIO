@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+Sitemap: https://neurio.org/sitemap.xml
