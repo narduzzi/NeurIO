@@ -145,6 +145,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../basics/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../basics/generic_deployment.html">Generic Deployment</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_devices/canaan.html">Canaan Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_devices/stmicroelectronics.html">ST Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_devices/google.html">ST Platforms</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../advanced/benchmarking/benchmarking.html">Benchmarking Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -301,7 +307,6 @@ document.write(`
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
 <span class="kn">import</span> <span class="nn">json</span>
 
-<span class="kn">import</span> <span class="nn">keras</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
@@ -339,7 +344,7 @@ document.write(`
 
     <span class="c1"># SYSTEM PREPARATION</span>
     <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">__prepare_model__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__prepare_model__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Prepare the model by following all the opitimization steps required by the device, and stores it.</span>
 
@@ -375,7 +380,7 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 
-<div class="viewcode-block" id="Device.prepare_for_inference"><a class="viewcode-back" href="../../../advanced/api_reference/devices/base_device_class.html#neurio.devices.device.Device.prepare_for_inference">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_for_inference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="Device.prepare_for_inference"><a class="viewcode-back" href="../../../advanced/api_reference/devices/base_device_class.html#neurio.devices.device.Device.prepare_for_inference">[docs]</a>    <span class="k">def</span> <span class="nf">prepare_for_inference</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Prepare the device for inference. This function should be called before any inference.</span>
 
@@ -400,7 +405,6 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 
-    <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">__subsample_data__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_x</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">batch_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Subsample the data to fit the device memory.</span>
@@ -410,7 +414,9 @@ document.write(`
 <span class="sd">        :param batch_index: index of the batch</span>
 <span class="sd">        :return: a batch of the subsampled data</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+        <span class="n">start_index</span> <span class="o">=</span> <span class="n">batch_index</span> <span class="o">*</span> <span class="n">batch_size</span>
+        <span class="n">end_index</span> <span class="o">=</span> <span class="n">start_index</span> <span class="o">+</span> <span class="n">batch_size</span>
+        <span class="k">return</span> <span class="n">input_x</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">end_index</span><span class="p">]</span>
 
     <span class="nd">@abstractmethod</span>
     <span class="k">def</span> <span class="nf">__transfer_data_to_memory__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_x</span><span class="p">):</span>

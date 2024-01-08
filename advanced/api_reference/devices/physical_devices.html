@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Physical Devices &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -145,6 +145,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../basics/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../basics/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../basics/generic_deployment.html">Generic Deployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_devices/canaan.html">Canaan Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_devices/stmicroelectronics.html">ST Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../supported_devices/google.html">ST Platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="current nav bd-sidenav">
@@ -344,8 +350,31 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stmicrolectronics">STMicrolectronics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synsense">SynSense</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stmicrolectronics">STMicrolectronics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32"><code class="docutils literal notranslate"><span class="pre">STM32</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.__connect_runner"><code class="docutils literal notranslate"><span class="pre">STM32.__connect_runner()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.is_alive"><code class="docutils literal notranslate"><span class="pre">STM32.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.infer"><code class="docutils literal notranslate"><span class="pre">STM32.infer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.predict"><code class="docutils literal notranslate"><span class="pre">STM32.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">STM32.prepare_for_inference()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9"><code class="docutils literal notranslate"><span class="pre">STM32L4R9</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.infer"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.infer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.is_alive"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.predict"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.prepare_for_inference()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.infer"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.infer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.is_alive"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.predict"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.prepare_for_inference()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -419,7 +448,7 @@ document.write(`
 
 <dl class="py method">
 <dt class="sig sig-object py" id="neurio.devices.physical.canaan.kendryte.K210.prepare_for_inference">
-<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.canaan.kendryte.K210.prepare_for_inference" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.canaan.kendryte.K210.prepare_for_inference" title="Permalink to this definition">#</a></dt>
 <dd><p>Prepare the device for inference. This function should be called before any inference.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -436,11 +465,227 @@ document.write(`
 </section>
 <section id="stmicrolectronics">
 <h2>STMicrolectronics<a class="headerlink" href="#stmicrolectronics" title="Permalink to this heading">#</a></h2>
-<p>Coming SOON</p>
-</section>
-<section id="synsense">
-<h2>SynSense<a class="headerlink" href="#synsense" title="Permalink to this heading">#</a></h2>
-<p>Coming SOON  TODO</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.physical.st.stm32.</span></span><span class="sig-name descname"><span class="pre">STM32</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'serial'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device_identifier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'STM32'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'STM32Base'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/physical/st/stm32.html#STM32"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32.__connect_runner">
+<span class="sig-name descname"><span class="pre">__connect_runner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32.__connect_runner" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32.is_alive">
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="../../../_modules/neurio/devices/physical/st/stm32.html#STM32.is_alive"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32.is_alive" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the device is alive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout</strong> – timeout in seconds</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return true if the device is alive (connected), false otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32.infer">
+<span class="sig-name descname"><span class="pre">infer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32.infer" title="Permalink to this definition">#</a></dt>
+<dd><p>Run inference on the device and measures associated performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_x</strong> – input data to infer</p></li>
+<li><p><strong>batch_size</strong> – batch size</p></li>
+<li><p><strong>kwargs</strong> – other parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple: (inference_results: np.array, profiler: Profiler)</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>DeviceNotReadyException</strong> – if the device is not ready for inference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32.predict" title="Permalink to this definition">#</a></dt>
+<dd><p>Run inference on the device and measures associated performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_x</strong> – input data to infer</p></li>
+<li><p><strong>batch_size</strong> – batch size</p></li>
+<li><p><strong>kwargs</strong> – other parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the inference results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32.prepare_for_inference">
+<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32.prepare_for_inference" title="Permalink to this definition">#</a></dt>
+<dd><p>Prepare the device for inference. This function should be called before any inference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – model to deploy on the device</p></li>
+<li><p><strong>kwargs</strong> – other parameters relevant for the preparation of the device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32L4R9">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.physical.st.stm32.</span></span><span class="sig-name descname"><span class="pre">STM32L4R9</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'serial'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'STM32L4R9I-DISCO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/physical/st/stm32.html#STM32L4R9"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32L4R9" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32L4R9.infer">
+<span class="sig-name descname"><span class="pre">infer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32L4R9.infer" title="Permalink to this definition">#</a></dt>
+<dd><p>Run inference on the device and measures associated performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_x</strong> – input data to infer</p></li>
+<li><p><strong>batch_size</strong> – batch size</p></li>
+<li><p><strong>kwargs</strong> – other parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple: (inference_results: np.array, profiler: Profiler)</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>DeviceNotReadyException</strong> – if the device is not ready for inference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32L4R9.is_alive">
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32L4R9.is_alive" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the device is alive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout</strong> – timeout in seconds</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return true if the device is alive (connected), false otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32L4R9.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32L4R9.predict" title="Permalink to this definition">#</a></dt>
+<dd><p>Run inference on the device and measures associated performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_x</strong> – input data to infer</p></li>
+<li><p><strong>batch_size</strong> – batch size</p></li>
+<li><p><strong>kwargs</strong> – other parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the inference results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.STM32L4R9.prepare_for_inference">
+<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.STM32L4R9.prepare_for_inference" title="Permalink to this definition">#</a></dt>
+<dd><p>Prepare the device for inference. This function should be called before any inference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – model to deploy on the device</p></li>
+<li><p><strong>kwargs</strong> – other parameters relevant for the preparation of the device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.NUCLEOH723ZG">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">neurio.devices.physical.st.stm32.</span></span><span class="sig-name descname"><span class="pre">NUCLEOH723ZG</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'serial'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'NUCLEO-H723ZG'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/neurio/devices/physical/st/stm32.html#NUCLEOH723ZG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG" title="Permalink to this definition">#</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.NUCLEOH723ZG.infer">
+<span class="sig-name descname"><span class="pre">infer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.infer" title="Permalink to this definition">#</a></dt>
+<dd><p>Run inference on the device and measures associated performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_x</strong> – input data to infer</p></li>
+<li><p><strong>batch_size</strong> – batch size</p></li>
+<li><p><strong>kwargs</strong> – other parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple: (inference_results: np.array, profiler: Profiler)</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>DeviceNotReadyException</strong> – if the device is not ready for inference.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.NUCLEOH723ZG.is_alive">
+<span class="sig-name descname"><span class="pre">is_alive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.is_alive" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the device is alive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout</strong> – timeout in seconds</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Return true if the device is alive (connected), false otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.NUCLEOH723ZG.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.predict" title="Permalink to this definition">#</a></dt>
+<dd><p>Run inference on the device and measures associated performance metrics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_x</strong> – input data to infer</p></li>
+<li><p><strong>batch_size</strong> – batch size</p></li>
+<li><p><strong>kwargs</strong> – other parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the inference results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="neurio.devices.physical.st.stm32.NUCLEOH723ZG.prepare_for_inference">
+<span class="sig-name descname"><span class="pre">prepare_for_inference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.prepare_for_inference" title="Permalink to this definition">#</a></dt>
+<dd><p>Prepare the device for inference. This function should be called before any inference.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – model to deploy on the device</p></li>
+<li><p><strong>kwargs</strong> – other parameters relevant for the preparation of the device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 
@@ -498,8 +743,31 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stmicrolectronics">STMicrolectronics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#synsense">SynSense</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stmicrolectronics">STMicrolectronics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32"><code class="docutils literal notranslate"><span class="pre">STM32</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.__connect_runner"><code class="docutils literal notranslate"><span class="pre">STM32.__connect_runner()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.is_alive"><code class="docutils literal notranslate"><span class="pre">STM32.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.infer"><code class="docutils literal notranslate"><span class="pre">STM32.infer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.predict"><code class="docutils literal notranslate"><span class="pre">STM32.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">STM32.prepare_for_inference()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9"><code class="docutils literal notranslate"><span class="pre">STM32L4R9</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.infer"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.infer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.is_alive"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.predict"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.STM32L4R9.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">STM32L4R9.prepare_for_inference()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.infer"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.infer()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.is_alive"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.is_alive()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.predict"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.predict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#neurio.devices.physical.st.stm32.NUCLEOH723ZG.prepare_for_inference"><code class="docutils literal notranslate"><span class="pre">NUCLEOH723ZG.prepare_for_inference()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

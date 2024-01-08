@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Wall of Fame &#8212; NeurIO 0.0.1dev documentation</title>
+    <title>ST Platforms &#8212; NeurIO 0.0.1dev documentation</title>
   
   
   
@@ -45,12 +45,14 @@
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contribution/WALL_OF_FAME';</script>
-    <link rel="canonical" href="https://neurio.org/docs/contribution/WALL_OF_FAME.html" />
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'supported_devices/google';</script>
+    <link rel="canonical" href="https://neurio.org/docs/supported_devices/google.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="FAQ" href="../troubleshooting/FAQ.html" />
-    <link rel="prev" title="Code of Conduct" href="CODE_OF_CONDUCT.html" />
+    <link rel="next" title="Benchmarking Guide" href="../advanced/benchmarking/benchmarking.html" />
+    <link rel="prev" title="ST Platforms" href="stmicroelectronics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -147,10 +149,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../basics/generic_deployment.html">Generic Deployment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../supported_devices/canaan.html">Canaan Platforms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_devices/stmicroelectronics.html">ST Platforms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../supported_devices/google.html">ST Platforms</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="canaan.html">Canaan Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stmicroelectronics.html">ST Platforms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ST Platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="nav bd-sidenav">
@@ -185,11 +187,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../advanced/CHANGELOG.html">Change log</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contribution</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
-<li class="toctree-l1"><a class="reference internal" href="CODE_OF_CONDUCT.html">Code of Conduct</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Wall of Fame</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../contribution/CONTRIBUTING.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/ADD_A_DEVICE.html">Adding a physical device in NeurIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contribution/WALL_OF_FAME.html">Wall of Fame</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Troubleshooting</span></p>
 <ul class="nav bd-sidenav">
@@ -248,7 +250,7 @@
       
       
       
-      <li><a href="../_sources/contribution/WALL_OF_FAME.md" target="_blank"
+      <li><a href="../_sources/supported_devices/google.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +332,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Wall of Fame</h1>
+    <h1>ST Platforms</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,8 +342,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#active-contributors">Active contributors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passed-contributors">Passed contributors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-supported-platforms">List of supported platforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-coral-edge-tpu">Google Coral Edge TPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-steps">Installation steps</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-process">Execution process</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -353,24 +366,122 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="wall-of-fame">
-<h1>Wall of Fame<a class="headerlink" href="#wall-of-fame" title="Permalink to this heading">#</a></h1>
-<p>Huge thanks to all contributors!</p>
-<section id="active-contributors">
-<h2>Active contributors<a class="headerlink" href="#active-contributors" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Simon Narduzzi</p></li>
-<li><p>Nicolas Cantale</p></li>
-<li><p>Rémy Vuagnaux</p></li>
-</ul>
+  <section id="st-platforms">
+<h1>ST Platforms<a class="headerlink" href="#st-platforms" title="Permalink to this heading">#</a></h1>
+<section id="list-of-supported-platforms">
+<h2>List of supported platforms<a class="headerlink" href="#list-of-supported-platforms" title="Permalink to this heading">#</a></h2>
+<p>Few platforms from Canaan are supported, including:</p>
+<table border="1" class="docutils">
+<thead>
+<tr>
+<th>Platform</th>
+<th>Processor</th>
+<th>Description</th>
+<th>Status</th>
+<th>Firmware</th>
+<th>Tools version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coral Edge TPU</td>
+<td>Google Coral</td>
+<td>Google Coral TPU USB</td>
+<td>Supported</td>
+<td>-</td>
+<td>TFLite Runtime, PyCoral v2.0.0</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="passed-contributors">
-<h2>Passed contributors<a class="headerlink" href="#passed-contributors" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Dorvan Favre</p></li>
-<li><p>Romain Gaulier</p></li>
-<li><p>Qianqian Feng</p></li>
-</ul>
+<section id="google-coral-edge-tpu">
+<h2>Google Coral Edge TPU<a class="headerlink" href="#google-coral-edge-tpu" title="Permalink to this heading">#</a></h2>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
+<section id="prerequisites">
+<h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h4>
+<p>To use Google Edge TPU with NeurIO, you need to follow the installation steps on the <a class="reference external" href="https://coral.ai/docs/accelerator/get-started/#requirements">official documentation</a>.</p>
+</section>
+<section id="installation-steps">
+<h4>Installation steps<a class="headerlink" href="#installation-steps" title="Permalink to this heading">#</a></h4>
+<p>The current PyCoral library (v2.0.0) conflicts with the official Tensorflow package. To use the Edge TPU,
+it is required to modify the official tflite interpreter scripts. To do so, you need to modify the following file</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>your_venv<span class="o">}</span>/lib/python3.x/site-packages/tflite_runtime/interpreter.py
+</pre></div>
+</div>
+<p>by replacing the following line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.lite.python.interpreter_wrapper</span> <span class="kn">import</span> <span class="n">_pywrap_tensorflow_interpreter_wrapper</span> <span class="k">as</span> <span class="n">_interpreter_wrapper</span>
+</pre></div>
+</div>
+<p>with:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">tensorflow.lite.python.interpreter_wrapper</span> <span class="kn">import</span> <span class="n">_pywrap_tensorflow_interpreter_wrapper</span> <span class="k">as</span> <span class="n">_interpreter_wrapper</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Using Interpreter from tflite_runtime package.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As a result, the interpreter of Tensorflow Lite will be bypassed by the interpreter of the TFLite Runtime of PyCoral.</p>
+</section>
+</section>
+<section id="usage">
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
+<p>You can import the Google Coral EdgeTPU device from the <code class="docutils literal notranslate"><span class="pre">devices.google.coral</span></code> module and use it to benchmark models.
+For example, you can run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neurio.devices.google.coral</span> <span class="kn">import</span> <span class="n">EdgeTPU</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">EdgeTPU</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">device</span><span class="o">.</span><span class="n">prepare_for_inference</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_x</span><span class="o">=</span><span class="n">input_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="execution-process">
+<h4>Execution process<a class="headerlink" href="#execution-process" title="Permalink to this heading">#</a></h4>
+<p>The execution process for EdgeTPU is as follows:</p>
+<div class="mermaid">
+            %%{init: {'theme':'dark'}}%%
+    flowchart TD
+        subgraph PR[&quot;PREDICTION&quot;]
+            
+            subgraph SP[&quot;Setup&quot;]
+                              
+                B[&quot;Convert model to TFLite&lt;br/&gt;(Tensorflow Lite)&quot;]
+                C[&quot;Save TFlite model to file&quot;]
+                D[&quot;Allocate tensors of model on EdgeTPU&lt;br/&gt;(PyCoral)&quot;]
+                B --&gt; C --&gt; D
+            end
+            
+            subgraph INF[&quot;Inference&quot;]
+                F[&quot;Preprocess data&lt;br/&gt;(convert to uint8 if necessary)&quot;]
+                G[&quot;Save data locally&quot;]
+                H[&quot;Fill input tensors&lt;br/&gt;memory with data&quot;]
+                I[&quot;Run inference&quot;]
+                J[&quot;Read output tensor memory&quot;]
+                K[&quot;Fill Profiler with metrics from inference&quot;]
+                F --&gt; G --&gt; H
+                H --&gt; I
+                I --&gt; J
+                J --&gt; K
+                K -- if more data --&gt; H
+            end
+            
+            subgraph PP[&quot;Post-processing&quot;]
+                
+                L[&quot;Aggregate results&quot;]
+                M[&quot;Compute metrics&quot;]
+                N[&quot;Finished&quot;]
+                L --&gt; M --&gt; N
+            end
+            
+            SP --&gt; INF
+            INF -- if all data predicted --&gt; PP
+        
+        end
+        
+        </div></section>
+</section>
 </section>
 </section>
 
@@ -386,20 +497,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="CODE_OF_CONDUCT.html"
+       href="stmicroelectronics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Code of Conduct</p>
+        <p class="prev-next-title">ST Platforms</p>
       </div>
     </a>
     <a class="right-next"
-       href="../troubleshooting/FAQ.html"
+       href="../advanced/benchmarking/benchmarking.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">FAQ</p>
+        <p class="prev-next-title">Benchmarking Guide</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -418,8 +529,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#active-contributors">Active contributors</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passed-contributors">Passed contributors</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-supported-platforms">List of supported platforms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#google-coral-edge-tpu">Google Coral Edge TPU</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-steps">Installation steps</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-process">Execution process</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

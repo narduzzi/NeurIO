@@ -145,6 +145,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../basics/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../basics/generic_deployment.html">Generic Deployment</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../supported_devices/canaan.html">Canaan Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../supported_devices/stmicroelectronics.html">ST Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../supported_devices/google.html">ST Platforms</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../advanced/benchmarking/benchmarking.html">Benchmarking Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -302,9 +308,9 @@ document.write(`
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="kn">import</span> <span class="n">Model</span><span class="p">,</span> <span class="n">Sequential</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">Conv3D</span><span class="p">,</span> <span class="n">DepthwiseConv2D</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">AveragePooling1D</span><span class="p">,</span> <span class="n">AveragePooling2D</span><span class="p">,</span> \
-    <span class="n">MaxPooling1D</span><span class="p">,</span> <span class="n">MaxPooling2D</span><span class="p">,</span> <span class="n">Activation</span><span class="p">,</span> <span class="n">BatchNormalization</span><span class="p">,</span> <span class="n">Reshape</span><span class="p">,</span> <span class="n">ZeroPadding1D</span><span class="p">,</span> <span class="n">ZeroPadding2D</span><span class="p">,</span> <span class="n">Activation</span>
+<span class="c1">#from tensorflow.keras import Model, Sequential</span>
+<span class="c1">#from tensorflow.keras.layers import Conv1D, Conv2D, Conv3D, DepthwiseConv2D, Dense, AveragePooling1D, AveragePooling2D, \</span>
+ <span class="c1">#   MaxPooling1D, MaxPooling2D, Activation, BatchNormalization, Reshape, ZeroPadding1D, ZeroPadding2D, Activation</span>
 
 
 <div class="viewcode-block" id="Benchmark"><a class="viewcode-back" href="../../../../advanced/api_reference/benchmarks/benchmark.html#neurio.benchmarking.suites.Benchmark">[docs]</a><span class="k">class</span> <span class="nc">Benchmark</span><span class="p">:</span>

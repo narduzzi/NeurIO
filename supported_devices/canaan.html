@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Canaan Platforms &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -45,10 +45,14 @@
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'supported_devices/canaan';</script>
     <link rel="canonical" href="https://neurio.org/docs/supported_devices/canaan.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ST Platforms" href="stmicroelectronics.html" />
+    <link rel="prev" title="Generic Deployment" href="../basics/generic_deployment.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -143,6 +147,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../basics/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basics/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basics/generic_deployment.html">Generic Deployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Canaan Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stmicroelectronics.html">ST Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google.html">ST Platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="nav bd-sidenav">
@@ -390,11 +400,11 @@ document.write(`
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
 <section id="prerequisites">
 <h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h4>
-<p>To install NeurIO on Kendryte K210, you need to install the following tools:</p>
+<p>To install NeurIO for Kendryte K210, you need to install the following tools:</p>
 <ul class="simple">
-<li><p>NCC (NNCase from Canaan): a compiler for neural networks, transforming TFLite models to K210 compatible models. The link to the version 0.2.0 is <a class="reference external" href="https://github.com/kendryte/nncase/releases/download/v0.2.0-beta4/ncc_osx_x86_64.dmg">here</a>.</p></li>
-<li><p>MaixPy: a Python interpreter for Kendryte K210. The link to the version 0.6.2 is <a class="reference external" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master">here</a>.</p></li>
-<li><p>Instructions to install MaixPy on the Sipeed Maix M1 board are <a class="reference external" href="https://maixpy.sipeed.com/en/get_started/">here</a>.</p></li>
+<li><p>NCC (NNCase from Canaan): a compiler for neural networks, transforming TFLite models to K210 compatible models. The link to the version 0.2.0 is <a class="reference external" href="https://github.com/kendryte/nncase/releases/download/v0.2.0-beta4/ncc_osx_x86_64.dmg">“here”</a>.</p></li>
+<li><p>MaixPy: a Python interpreter for Kendryte K210. The link to the version 0.6.2 is <a class="reference external" href="https://dl.sipeed.com/shareURL/MAIX/MaixPy/release/master">“here”</a>.</p></li>
+<li><p>Instructions to install MaixPy on the Sipeed Maix M1 board are <a class="reference external" href="https://maixpy.sipeed.com/en/get_started/">“here”</a>.</p></li>
 </ul>
 </section>
 <section id="installation-steps">
@@ -410,61 +420,64 @@ document.write(`
 <section id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
 <p>To use NeurIO and benchmark models on Kendryte K210, you need to connect the board to the computer and run the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neurio.devices.canaan</span> <span class="kn">import</span> <span class="n">K210</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;/dev/tty.someport&quot;</span> <span class="c1"># port to which the device is connected</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">K210</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">device</span><span class="o">.</span><span class="n">prepare_for_inference</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_x</span><span class="o">=</span><span class="n">input_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="execution-process">
 <h4>Execution process<a class="headerlink" href="#execution-process" title="Permalink to this heading">#</a></h4>
-<p>The execution process for K210 is the following</p>
-<!DOCTYPE html>
-<html lang="en">
-  <body>
-    <pre class="mermaid">
-    flowchart TB
-    A[Download NCC]
-        B[Convert model to TFLite]
-        C[Convert TFLite model to K210]
-        D[Generate scripts for inference]
-        E[Upload scripts]
-        F[Upload model]
-        G[Save data]
-        H[Upload batch of data]
-        I[Run inference]
-        J[Save results to SD]
-        K[Download results]
-        L[Aggregate results]
-        M[Compute metrics]
-        N[Finished]
-        subgraph setup
-            direction TB
-            A --> B
-            B --> C
-            C --> D
-            D --> E
-            E --> F
+<p>The execution process for K210 is as follows:</p>
+<div class="mermaid">
+            %%{init: {'theme':'dark'}}%%
+    flowchart TD
+        subgraph PR[&quot;PREDICTION&quot;]
+            subgraph SP[&quot;Setup&quot;]
+                A[&quot;Download NCC&quot;]
+                B[&quot;Convert model to TFLite&quot;]
+                C[&quot;Convert TFLite model to K210&quot;]
+                D[&quot;Generate scripts for inference&quot;]
+                E[&quot;Upload scripts&quot;]
+                F[&quot;Upload model&quot;]
+                A --&gt; B
+                B --&gt; C
+                C --&gt; D
+                D --&gt; E
+                E --&gt; F
+            end
+            
+            subgraph INF[&quot;Inference&quot;]
+                G[&quot;Save data&quot;]
+                H[&quot;Upload batch of data&quot;]
+                I[&quot;Run inference&quot;]
+                J[&quot;Save results to SD&quot;]
+                K[&quot;Download results&quot;]
+                G --&gt; H
+                H --&gt; I
+                I --&gt; J
+                J --&gt; K
+                K -- if more data --&gt; H
+            end
+            
+            subgraph PP[&quot;Post-processing&quot;]
+                L[&quot;Aggregate results&quot;]
+                M[&quot;Compute metrics&quot;]
+                N[&quot;Finished&quot;]
+                L --&gt; M --&gt; N
+            end
+            
+            SP --&gt; INF
+            INF -- if all data predicted --&gt; PP
+        
         end
-        subgraph inference
-            direction TB
-            G --> H
-            H --> I
-            I --> J
-            J --> K
-            K -- if more data --> H
-        end
-        subgraph post-processing
-            direction TB
-            L --> M
-            M --> N
-        end;
-        F --> G
-        K -- if all data predicted --> L
-    </pre>
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    </script>
-  </body>
-</html>
-</section>
+        
+        </div></section>
 </section>
 </section>
 </section>
@@ -480,6 +493,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../basics/generic_deployment.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Generic Deployment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="stmicroelectronics.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ST Platforms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

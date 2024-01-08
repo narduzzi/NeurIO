@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>ST Platforms &#8212; NeurIO 0.0.1dev documentation</title>
   
@@ -45,10 +45,14 @@
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script src="../_static/js/mermaid.js"></script>
+    <script src="https://unpkg.com/mermaid@10.2.0/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'supported_devices/stmicroelectronics';</script>
     <link rel="canonical" href="https://neurio.org/docs/supported_devices/stmicroelectronics.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ST Platforms" href="google.html" />
+    <link rel="prev" title="Canaan Platforms" href="canaan.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -143,6 +147,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../basics/installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basics/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../basics/generic_deployment.html">Generic Deployment</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="canaan.html">Canaan Platforms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">ST Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="google.html">ST Platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="nav bd-sidenav">
@@ -333,7 +343,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-supported-platforms">List of supported platforms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform1">Platform1</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stm32-m4-and-m7-family">STM32 M4 and M7 Family</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-steps">Installation steps</a></li>
@@ -374,57 +384,116 @@ document.write(`
 </thead>
 <tbody>
 <tr>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
+<td>NUCLEO-144</td>
+<td>ARM Cortex M7</td>
+<td>Nucleo Dev Board (NUCLEO-H723ZG)</td>
+<td>Supported</td>
+<td>1.10</td>
+<td>X-Cube-AI 7.1.0, STMCubeIDE 6.5.0, STMProgrammerCLI 2.10.0, ST-Link 2.0.2</td>
+</tr>
+<tr>
+<td>STML4R9I-DISCO</td>
+<td>ARM Cortex M4</td>
+<td>Discovery Board (STM32L4R9/S9)</td>
+<td>Supported</td>
+<td>1.10</td>
+<td>X-Cube-AI 7.1.0, STMCubeIDE 6.5.0, STMProgrammerCLI 2.10.0, ST-Link 2.0.2</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="platform1">
-<h2>Platform1<a class="headerlink" href="#platform1" title="Permalink to this heading">#</a></h2>
+<section id="stm32-m4-and-m7-family">
+<h2>STM32 M4 and M7 Family<a class="headerlink" href="#stm32-m4-and-m7-family" title="Permalink to this heading">#</a></h2>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
 <section id="prerequisites">
 <h4>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h4>
+<p>To install NeurIO for M4 and M7, you need to install the following tools:</p>
+<ul class="simple">
+<li><p>X-Cube-AI: a tool to convert TFLite models to STM32 compatible models. The link to the version 7.1.0 is <a class="reference external" href="https://www.st.com/en/embedded-software/x-cube-ai.html">here</a>.</p></li>
+<li><p>STMCubeIDE: an IDE to develop and flash firmware on STM32 boards. The link to the version 6.5.0 is <a class="reference external" href="https://www.st.com/en/development-tools/stm32cubeide.html">here</a>.</p></li>
+<li><p>STMProgrammerCLI: a tool to flash firmware on STM32 boards. The link to the version 2.0.1 is <a class="reference external" href="https://www.st.com/en/development-tools/stm32cubeprog.html">here</a>.</p></li>
+<li><p>ST-LINK Utility: a tool to flash firmware on STM32 boards. The link to the version 2.0.2 is <a class="reference external" href="https://www.st.com/en/development-tools/stsw-link004.html">here</a>.</p></li>
+</ul>
 </section>
 <section id="installation-steps">
 <h4>Installation steps<a class="headerlink" href="#installation-steps" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Download and install the prerequisite tools.</p></li>
+<li><p>Setup the environment variables to set the path to the STM32 tools.
+Example for MacOS Sonoma:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">STM32CUBEPROGRAMER_CLI_PATH</span><span class="o">=</span>/Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin/STM32_Programmer_CLI<span class="sb">`</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">X_CUBE_AI_PATH</span><span class="o">=</span>/Users/alex/STM32Cube/Repository/Packs/STMicroelectronics/X-CUBE-AI/7.1.0
+<span class="nb">export</span><span class="w"> </span><span class="nv">STM32CUBEIDE_PATH</span><span class="o">=</span>/Applications/STM32CubeIDE.app/Contents/MacOS/STM32CubeIDE
+</pre></div>
+</div>
 </section>
 </section>
 <section id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
+<p>You can import a device from the ST module and use it to benchmark models on STM32 boards.
+For example, to run a model on the NUCLEO-H723ZG board, you can run the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">neurio.devices.st</span> <span class="kn">import</span> <span class="n">NUCLEOH723ZG</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">input_data</span> <span class="o">=</span> <span class="o">...</span>
+<span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;serial&quot;</span> <span class="c1"># port to which the device is connected</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">NUCLEOH723ZG</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="n">port</span><span class="p">,</span> <span class="n">log_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+<span class="n">device</span><span class="o">.</span><span class="n">prepare_for_inference</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">)</span>
+<span class="n">predictions</span> <span class="o">=</span> <span class="n">device</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">input_x</span><span class="o">=</span><span class="n">input_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
 <section id="execution-process">
 <h4>Execution process<a class="headerlink" href="#execution-process" title="Permalink to this heading">#</a></h4>
-<!DOCTYPE html>
-<html lang="en">
-  <body>
-    <pre class="mermaid">
-    flowchart TB
-    A[TODO]
-    B[TODO]
-    C[TODO]
-        subgraph setup
-            direction TB
-            A
+<p>The execution process for STM32 M4 and M7 families is as follows:</p>
+<div class="mermaid">
+            %%{init: {'theme':'dark'}}%%
+    flowchart TD
+        subgraph PR[&quot;PREDICTION&quot;]
+            
+            subgraph SP[&quot;Setup&quot;]
+                              
+                B[&quot;Convert model to TFLite&lt;br/&gt;(X-CUBE-AI)&quot;]
+                C[&quot;Convert TFLite model to C-Code&lt;br/&gt;(X-CUBE-AI)&quot;]
+                D[&quot;Generate scripts for inference&lt;br/&gt;(X-CUBE-AI)&quot;]
+                E[&quot;Compile files to .elf file&lt;br/&gt;(STMCubeIDE)&quot;]
+                F[&quot;Upload elf using ST-Link&lt;br/&gt;(STMCubeProgrammer)&quot;]
+                B --&gt; D
+                D --&gt; C
+                C --&gt; E
+                E --&gt; F
+            end
+            
+            subgraph INF[&quot;Inference&quot;]
+                
+                G[&quot;Save data locally&quot;]
+                H[&quot;Upload batch of data to device memory&lt;br/&gt;(STMCubeProgrammer)&quot;]
+                I[&quot;Run inference&lt;br/&gt;(X-CUBE-AI)&quot;]
+                J[&quot;Download results from device memory&lt;br/&gt;(STMCubeProgrammer)&quot;]
+                K[&quot;Retrieve Profiler values from AIRunner&lt;br/&gt;(X-CUBE-AI)&quot;]
+                G --&gt; H
+                H --&gt; I
+                I --&gt; J
+                J --&gt; K
+                K -- if more data --&gt; H
+            end
+            
+            subgraph PP[&quot;Post-processing&quot;]
+                
+                L[&quot;Aggregate results&quot;]
+                M[&quot;Compute metrics&quot;]
+                N[&quot;Finished&quot;]
+                L --&gt; M --&gt; N
+            end
+            
+            SP --&gt; INF
+            INF -- if all data predicted --&gt; PP
+        
         end
-        subgraph inference
-            B
-        end
-        subgraph post-processing
-            C
-        end;
-        A --> B --> C
-    </pre>
-    <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-    </script>
-  </body>
-</html>
-</section>
+        
+        </div></section>
 </section>
 </section>
 </section>
@@ -440,6 +509,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="canaan.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Canaan Platforms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="google.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ST Platforms</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -456,7 +543,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-of-supported-platforms">List of supported platforms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#platform1">Platform1</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stm32-m4-and-m7-family">STM32 M4 and M7 Family</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#installation-steps">Installation steps</a></li>

@@ -145,6 +145,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../basics/getting_started.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../basics/generic_deployment.html">Generic Deployment</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Supported Platforms</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../../supported_devices/canaan.html">Canaan Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../supported_devices/stmicroelectronics.html">ST Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../supported_devices/google.html">ST Platforms</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../advanced/benchmarking/benchmarking.html">Benchmarking Guide</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -304,22 +310,17 @@ document.write(`
 
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../&quot;</span><span class="p">)</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;../../../../&quot;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">keras</span>
 <span class="kn">from</span> <span class="nn">neurio.common</span> <span class="kn">import</span> <span class="n">Prediction</span><span class="p">,</span> <span class="n">Profiler</span>
 <span class="kn">from</span> <span class="nn">neurio.devices.device</span> <span class="kn">import</span> <span class="n">Device</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">tqdm</span> <span class="kn">import</span> <span class="n">tqdm</span>
-<span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span> <span class="k">as</span> <span class="n">make_tuple</span>
-<span class="kn">from</span> <span class="nn">neurio.converters.kendryte_utils</span> <span class="kn">import</span> <span class="n">convert_to_kmodel</span><span class="p">,</span> <span class="n">read_model_file</span>
+<span class="kn">from</span> <span class="nn">neurio.converters.kendryte_utils</span> <span class="kn">import</span> <span class="n">convert_to_kmodel</span>
 <span class="kn">from</span> <span class="nn">neurio.converters.tflite_utils</span> <span class="kn">import</span> <span class="n">keras_to_tflite</span>
-<span class="kn">from</span> <span class="nn">neurio.helpers</span> <span class="kn">import</span> <span class="n">check_profiler</span><span class="p">,</span> <span class="n">NpEncoder</span>
 <span class="kn">from</span> <span class="nn">neurio.exceptions</span> <span class="kn">import</span> <span class="n">InvalidImageRangeError</span>
 <span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
-<span class="kn">import</span> <span class="nn">subprocess</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">pexpect</span>
 
@@ -520,19 +521,6 @@ document.write(`
 
         <span class="k">return</span> <span class="n">preprocessed_data</span>
 
-    <span class="k">def</span> <span class="nf">__subsample_data__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_x</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">batch_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Subsample a batch of data from the dataset.</span>
-
-<span class="sd">        :param data: the dataset</span>
-<span class="sd">        :param batch_size: the batch size</span>
-<span class="sd">        :param batch_index: the index of the batch</span>
-<span class="sd">        :return: the batch of data</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">start_index</span> <span class="o">=</span> <span class="n">batch_index</span> <span class="o">*</span> <span class="n">batch_size</span>
-        <span class="n">end_index</span> <span class="o">=</span> <span class="n">start_index</span> <span class="o">+</span> <span class="n">batch_size</span>
-        <span class="k">return</span> <span class="n">input_x</span><span class="p">[</span><span class="n">start_index</span><span class="p">:</span><span class="n">end_index</span><span class="p">]</span>
-
     <span class="k">def</span> <span class="nf">__transfer_data_to_memory__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_x</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Transfer the data to the device memory.</span>
@@ -726,7 +714,6 @@ document.write(`
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rshell_session</span><span class="o">.</span><span class="n">before</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">rshell_session</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="s2">&quot;&gt;&quot;</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rshell_session</span><span class="o">.</span><span class="n">before</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-
 
     <span class="k">def</span> <span class="nf">__reset_device__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
