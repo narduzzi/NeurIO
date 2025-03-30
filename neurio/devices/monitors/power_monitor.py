@@ -61,7 +61,7 @@ class PPK2:
     def __init__(self, port, source_voltage=5000, baudrate=115200):
         self.port = port
         self.baudrate = baudrate
-        self.serial_port = serial.Serial(port, baudrate=baudrate, timeout=1)
+        self.serial_port = serial.Serial(port, baudrate=baudrate, timeout=1, exclusive=True)
         self.reader_thread = None
         self.protocol = None
 
@@ -184,6 +184,7 @@ class PowerProfilerKitII:
     def __init__(self, port: any = "serial", name: str = "ppk2", mode="source", source_voltage: int = 5000,
                  verbose: int = 0, log_dir: str = None, limit_uA=None, **kwargs):
 
+        print("Opening device {} with baudrate {}".format(port, 115200))
         self.kit = PPK2(port=port, source_voltage=source_voltage, baudrate=115200)
         self.name = name
         self.recordings = []
@@ -204,7 +205,7 @@ class PowerProfilerKitII:
         :param int: voltage in mV
         """
         self.kit.set_source_voltage(int)
-        if self.verbose:
+        if self.verbose>0:
             print(f"Source voltage set to {int} mV")
 
     def toggle_power(self, state):

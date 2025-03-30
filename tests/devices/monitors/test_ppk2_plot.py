@@ -21,9 +21,9 @@ class TestPPK2Plot:
         port = "/dev/tty.usbmodemF89AE991B16A2"
         ppk2 = PowerProfilerKitII(port=port, source_voltage=5000, baudrate=115200)
         ppk2.toggle_power("ON")
-        time.sleep(5.0)
+        time.sleep(2.0)
         ppk2.start("PHASE1")
-        time.sleep(30)  # simulate algorithm
+        time.sleep(10)  # simulate algorithm
         ppk2.stop()
 
         import matplotlib.pyplot as plt
